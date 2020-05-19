@@ -1,0 +1,73 @@
+@import "../../local_modules/normalize.css/normalize";
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'PTRootUI-Bold', sans-serif;
+  line-height: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: 100px;
+  font-family: 'PTRootUI-Medium', sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: white;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  svg {
+    margin-right: 9px;
+    transition: all 0.5s ease;
+  }
+  &-primary {
+    background: linear-gradient(251.55deg, #F4AB01 6.71%, #FF7308 94.17%);
+    color: white;
+  }
+  &-transparent {
+    background-color: transparent;
+    border: 1px solid #DFDFDF;
+    color: black;
+    transition: all 0.5s ease;
+    svg {
+      fill: black;
+      transition: all 0.5s ease;
+    }
+    &:hover {
+      background: linear-gradient(251.55deg, #F4AB01 6.71%, #FF7308 94.17%);
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
