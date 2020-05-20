@@ -88,6 +88,7 @@
     border-top: 1px solid $line-color;
     margin-top: 30px;
     padding-left: 0;
+    margin-bottom: 40px;
 
     .collapse-menu__link {
       padding: 12px 0;
@@ -134,6 +135,49 @@
         li {
           padding: 3px 0;
         }
+      }
+    }
+  }
+
+  .pure-menu-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 40px;
+
+    li {
+      margin-right: 20px;
+      padding: 5px 0;
+
+      a {
+        font-family: 'PTRootUI-Medium', sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        color: #737374;
+      }
+    }
+  }
+
+  .header-phone {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    span {
+      font-family: 'PTRootUI-Regular', sans-serif;
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: 0.04em;
+      color: #737374;
+
+      &.number {
+        font-family: 'PTRootUI-Bold', sans-serif;
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 0.02em;
+        color: black;
+        transition: all 0.5s ease;
       }
     }
   }

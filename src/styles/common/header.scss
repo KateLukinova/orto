@@ -45,7 +45,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
-    border-bottom: 1px solid $line-color;
 
     &__item {
       display: flex;
@@ -111,24 +110,33 @@ header {
   }
 
   .mega-menu {
-    padding: 16px 0;
     box-sizing: border-box;
     width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 1px solid $line-color;
+    border-bottom: 1px solid $line-color;
 
-    ul {
+    .mega-menu__ul {
       display: flex;
       width: 100%;
+      height: 100%;
       justify-content: space-between;
       align-items: center;
       padding: 0;
-      position: relative;
-      border-top: 16px solid white;
+      margin-bottom: 0;
 
-      li.mega-menu__link {
-        width: 9%;
+      .mega-menu__link {
+        width: 126px;
+        height: 100%;
         display: flex;
         justify-content: center;
-        padding-left: 15px;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 30px;
 
         &:nth-child(1) {
           justify-content: flex-start;
@@ -146,6 +154,26 @@ header {
           letter-spacing: 0.02em;
           color: #000000;
           white-space: nowrap;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 0;
+            background-color: $color-acc2;
+            transition: all 0.5s ease;
+          }
+
+          &:hover:after {
+            width: 100%;
+          }
         }
 
         .mega-menu__sub {
@@ -154,7 +182,52 @@ header {
           left: 0;
           visibility: hidden;
           opacity: 0;
-          transition: visibility 0s, opacity 0.5s ease;
+          transition: visibility 0s ease;
+          display: flex;
+          flex-direction: column;
+          border-top: 1px solid $line-color;
+          transform: translateY(100%);
+
+          h3 {
+            font-family: 'PTRootUI', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: $text-color;
+            margin-bottom: 30px;
+          }
+
+          .header-menu-sub {
+            display: flex;
+            align-items: flex-start;
+
+            span {
+              display: block;
+              max-width: 260px;
+
+              a {
+                font-family: 'PTRootUI-Regular', sans-serif;
+                font-size: 16px;
+                line-height: 24px;
+                color: #333333;
+                white-space: normal;
+                transition: all 0.5s ease;
+                margin-bottom: 20px;
+
+                &:after {
+                  content: none;
+                }
+              }
+
+              &:hover {
+                a {
+                  color: $text-color-hover;
+                }
+              }
+            }
+          }
         }
 
         &:hover {
@@ -163,12 +236,14 @@ header {
             background: #FAFAFA;
             box-shadow: 0px 26px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            height: 400px;
+            min-height: 400px;
+            height: auto;
             z-index: 10;
-            transform: translateY(100%);
             visibility: visible;
             opacity: 1;
             margin-top: 16px;
+            padding: 40px 0;
+            box-sizing: border-box;
           }
         }
       }

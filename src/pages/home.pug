@@ -4,4 +4,46 @@ html(lang="ru")
   body
     include common/header
     include common/header-mobile
+    .container-fluid.advantages-block
+      .container.advantages-content
+        .advantages__item.col-auto
+          .advantages__img
+            img(src="/img/individ.svg" alt="advantages")
+          .advantages__text
+            h5 Индивидуальный подход
+            p Делаем ортопедические изделия под ваши индивидуальные особенности
+        .advantages__item.col-auto
+          .advantages__img
+            img(src="/img/box.svg" alt="advantages")
+          .advantages__text
+            h5 Доставка по всей России
+            p Оформляйте заказ на сайте и мы доставим  его в самое ближайшее время
+        .advantages__item.col-auto
+          .advantages__img
+            img(src="/img/wallet.svg" alt="advantages")
+          .advantages__text
+            h5 Удобный способ оплаты
+            p Можно расплатиться удобным для вас способом, наличными или картой
+    .container-fluid.bg-gray
+      .container.tabs-wrap
+        .tabs
+          span.tab Популярные
+          span.tab Товары со скидкой
+        .tab-content
+          .tab-item
+            a.tab-card(href="#")
+              .tab-card__img
+                img(src="/img/img-tc-01.png" alt="catalog-img")
+              .tab-card__art арт. 351 28-25
+              .tab-card__name Ортез на руку индивидуальный (ТВК-1)
+              .tab-card__footer
+                .tab-card__price
+                  span.value 10 000
+                  span.nominal руб.
+                .arrow-button
+                  img(src="/img/button-arrow.svg" alt="arrow")
+
+
+          .tab-item jdfklgjdlkfgdfgdfg 2
+
     include common/footer

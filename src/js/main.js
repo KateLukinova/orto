@@ -1,5 +1,5 @@
 import $ from '../local_modules/jquery/dist/jquery.min'
-console.log('asdfsadfasd')
+// import '../local_modules/owl.carousel/dist/owl.carousel.min'
 $(document).ready(() => {
 
   $('.menu-icon').click(function () {
@@ -19,4 +19,8 @@ $(document).ready(() => {
 
   });
 
+  $(".tabs-wrap .tab").click(function() {
+    $(".tabs-wrap .tab").removeClass("active").eq($(this).index()).addClass("active");
+    $(".tab-item").hide().eq($(this).index()).fadeIn()
+  }).eq(0).addClass("active");
 })

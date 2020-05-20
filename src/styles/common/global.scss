@@ -1,5 +1,7 @@
 @import "../../local_modules/normalize.css/normalize";
 
+@import "../mixins/media";
+@import "../utils/variables";
 
 *,
 *::before,
@@ -45,6 +47,7 @@ ul {
   color: white;
   transition: all 0.5s ease;
   white-space: nowrap;
+  width: max-content;
   svg {
     margin-right: 9px;
     transition: all 0.5s ease;
@@ -53,8 +56,8 @@ ul {
     background: linear-gradient(251.55deg, #F4AB01 6.71%, #FF7308 94.17%);
     color: white;
   }
-  &-transparent {
-    background-color: transparent;
+  &-white {
+    background-color: white;
     border: 1px solid #DFDFDF;
     color: black;
     transition: all 0.5s ease;
@@ -70,4 +73,215 @@ ul {
       }
     }
   }
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
 }
+
+.advantages-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 0;
+  margin: auto;
+  width: 100%;
+
+  .advantages__item {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: 32%;
+    .advantages__img {
+      width: 50px;
+      margin-right: 25px;
+    }
+    h5 {
+      font-family: 'PTRootUI-Medium', sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.02em;
+      color: #000000;
+      margin-bottom: 5px;
+    }
+    p {
+      font-family: 'PTRootUI-Regular', sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      line-height: 15px;
+      letter-spacing: 0.04em;
+      color: #737374;
+      max-width: 240px;
+    }
+  }
+
+  @include media-tablet-horizontal {
+    flex-direction: column;
+
+    .advantages__item {
+      width: 100%;
+      margin-bottom: 15px;
+
+      &:nth-child(2) {
+        margin-left: 25%;
+      }
+
+      &:nth-child(3) {
+        margin-left: 50%;
+      }
+    }
+  }
+
+  @include media-mobile {
+    .advantages__item {
+
+      &:nth-child(2) {
+        margin-left: 0;
+      }
+
+      &:nth-child(3) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.bb {
+  border-bottom: 1px solid $line-color;
+}
+
+.bg-gray {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+
+  .tabs-wrap {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tabs {
+      display: flex;
+      background-color: white;
+      border-radius: 100px;
+      font-family: 'PTRootUI', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #737374;
+      margin-bottom: 40px;
+      cursor: pointer;
+
+      .tab {
+        padding: 12px 24px;
+        background-color: white;
+        border-radius: 100px;
+        transition: all 0.5s ease;
+
+        &.active {
+          background: linear-gradient(254.97deg, #F4AB01 6.71%, #FF7308 94.17%);
+          color: white;
+        }
+      }
+    }
+
+    .tab-content {
+      width: 100%;
+    }
+
+    .tab-item {
+      display: none;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+
+      &:first-child {
+        display: flex;
+      }
+
+      a.tab-card {
+        width: 24%;
+        background: #FFFFFF;
+        border: 1px solid #F2F2F2;
+        box-sizing: border-box;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+
+      .tab-card__img {
+        margin-bottom: 20px;
+      }
+
+      .tab-card__art {
+        font-family: 'PTRootUI-Medium', sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: #737374;
+        margin-bottom: 8px;
+      }
+
+      .tab-card__name {
+        font-family: 'PTRootUI-Medium', sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        color: $text-color;
+        margin-bottom: 16px;
+      }
+
+      .tab-card__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-top: 17px;
+        border-top: 1px solid $line-color
+      }
+
+      .tab-card__price {
+
+        span.value {
+          font-family: 'PTRootUI-Bold', sans-serif;
+          font-size: 20px;
+          line-height: 25px;
+          color: $text-color;
+        }
+
+        span.nominal {
+          font-family: 'PTRootUI-Regular', sans-serif;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+          color: $text-color;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.arrow-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: linear-gradient(265.43deg, #F4AB01 6.71%, #FF7308 94.17%);
+  transition: all 0.5s ease;
+
+  &:hover {
+    background: $color-acc2;
+  }
+}
+
+
+

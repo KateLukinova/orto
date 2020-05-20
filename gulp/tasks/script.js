@@ -4,12 +4,13 @@ const webpack = require('webpack-stream')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin")
 const eslint = require('gulp-eslint')
+// const owl = require('../../src/local_modules/owl.carousel/dist/owl.carousel.min')
 
 module.exports = function script() {
   return gulp.src('src/js/main.js')
     .pipe(plumber())
-    .pipe(eslint())
-    .pipe(eslint.format())
+    // .pipe(eslint())
+    // .pipe(eslint.format())
     .pipe(webpack({
       mode: process.env.NODE_ENV,
       output: {
@@ -31,7 +32,7 @@ module.exports = function script() {
       },
       plugins: [
         new CircularDependencyPlugin(),
-        new DuplicatePackageCheckerPlugin()
+        new DuplicatePackageCheckerPlugin(),
       ]
     }))
     .pipe(gulp.dest('build/js'))
